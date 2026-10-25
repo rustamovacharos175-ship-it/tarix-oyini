@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tarix oʻyini</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#e9f0f2;--bg2:#cfe2ea;--ink:#12263f;--mut:#51657d;--card:#fffdf7;--line:#c3d3da;--gold:#b8821a;--t0:#12908f;--t1:#b87f0f;--t2:#b3412e;--btn:#12263f;--btnt:#fffdf7;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b2038;--bg2:#12365e;--ink:#f4ecd8;--mut:#9fb3c8;--card:#102f52;--line:#2a4f7a;--gold:#efc25a;--t0:#3fd0cb;--t1:#efc25a;--t2:#f08a74;--btn:#efc25a;--btnt:#0b2038;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0b2038;--bg2:#12365e;--ink:#f4ecd8;--mut:#9fb3c8;--card:#102f52;--line:#2a4f7a;--gold:#efc25a;--t0:#3fd0cb;--t1:#efc25a;--t2:#f08a74;--btn:#efc25a;--btnt:#0b2038;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:Manrope,system-ui,sans-serif;line-height:1.55;
+background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cg fill='none' stroke='%23999' stroke-opacity='.28' stroke-width='1.2'%3E%3Crect x='22' y='22' width='36' height='36'/%3E%3Crect x='22' y='22' width='36' height='36' transform='rotate(45 40 40)'/%3E%3Ccircle cx='40' cy='40' r='6'/%3E%3C/g%3E%3C/svg%3E"),linear-gradient(180deg,var(--bg2),var(--bg) 70%)}
+main{max-width:860px;margin:0 auto;padding:20px 16px 40px}
+header{text-align:center;margin:8px 0 22px}
+header svg{width:44px;height:44px;color:var(--gold)}
+h1{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2.4rem,9vw,3.8rem);line-height:1;margin:6px 0 8px;letter-spacing:.01em}
+.sub{color:var(--mut);margin:0 auto;max-width:34em}
+.hide{display:none}
+.arches{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-bottom:18px}
+.arch{background:var(--card);border:2px solid var(--k);border-radius:110px 110px 18px 18px;padding:52px 18px 18px}
+.t0{--k:var(--t0)}.t1{--k:var(--t1)}.t2{--k:var(--t2)}
+label{display:block;font-size:.85rem;color:var(--mut);margin:0 0 4px}
+input,textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:transparent;color:var(--ink)}
+input{font-weight:800;text-align:center;font-size:1.05rem;color:var(--k)}
+textarea{min-height:120px;resize:vertical}
+.rules{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 22px;margin-bottom:20px}
+.rules h2{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.6rem;margin:0 0 6px}
+.rules ol{margin:0;padding-left:1.2em;color:var(--mut)}
+.btn,.ghost{font:inherit;font-weight:800;cursor:pointer;border-radius:999px;padding:13px 26px;border:2px solid var(--btn)}
+.btn{background:var(--btn);color:var(--btnt)}
+.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn:focus-visible,.ghost:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.center{text-align:center}
+.score{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:26px;align-items:end}
+.tile{background:var(--card);border:2px solid var(--k);border-radius:999px 999px 16px 16px;padding:30px 6px 12px;text-align:center;opacity:.6;transition:transform .3s,box-shadow .3s,opacity .3s}
+.tile.on{opacity:1;transform:translateY(-8px);border-width:3px;box-shadow:0 14px 26px -12px var(--k)}
+.tile .nm{font-weight:800;font-size:.95rem;color:var(--k);overflow-wrap:anywhere}
+.tile .pt{font-family:"Cormorant Garamond",Georgia,serif;font-size:2.8rem;font-weight:700;line-height:1.1;color:var(--ink)}
+.stage{background:var(--card);border-radius:20px;padding:28px 22px;margin:0 6px 26px;box-shadow:0 0 0 6px var(--card),0 0 0 8px var(--gold);text-align:center}
+.tag{color:var(--mut);font-size:.95rem;margin:0}
+.turn{font-size:1rem;color:var(--mut);margin:14px 0 0}
+.mem{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(2.4rem,10vw,4rem);font-weight:700;line-height:1.1;color:var(--k);margin:2px 0 10px;min-height:1.1em}
+.grp{font-weight:800;color:var(--k)}
+.q{font-family:"Cormorant Garamond",Georgia,serif;font-size:clamp(1.5rem,5vw,2.1rem);font-weight:600;line-height:1.25;margin:16px auto;max-width:28em}
+.ans{border:2px dashed var(--gold);border-radius:14px;padding:10px 14px;margin:14px auto;max-width:30em}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:18px}
+.big{font-family:"Cormorant Garamond",Georgia,serif;font-size:2.4rem;font-weight:700;margin:6px 0}
+.modes{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:6px 0 8px}
+.modes button{padding:10px 18px}
+.clue{font-size:clamp(1.2rem,4vw,1.6rem);margin:8px auto}
+@media (prefers-reduced-motion:reduce){.tile{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<header>
+ <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="10" y="10" width="28" height="28"/><rect x="10" y="10" width="28" height="28" transform="rotate(45 24 24)"/><circle cx="24" cy="24" r="4" fill="currentColor"/></svg>
+ <h1>Tarix oʻyini</h1>
+ <p class="sub">Iqtisodiy islohotlar, xususiy mulkchilik va bozor munosabatlari boʻyicha uch guruh bellashadi.</p>
+</header>
+
+<section id="setup">
+ <div class="arches" id="inputs"></div>
+ <div class="modes" id="modes"></div>
+ <p class="center sub" id="modeInfo" style="margin-bottom:18px"></p>
+ <div class="rules"><h2>Qoidalar</h2><ol>
+  <li>Navbat bilan guruh tanlanadi va undan tasodifiy ishtirokchi chiqadi.</li>
+  <li>Toʻgʻri javob uchun guruh ball oladi (oʻyin turiga qarab).</li>
+  <li>Bilmasa, savol keyingi guruhga oʻtadi va u guruhdan boshqa ishtirokchi chiqadi.</li>
+  <li>Uch guruh ham bilmasa, toʻgʻri javob oʻqiladi va ball berilmaydi.</li></ol></div>
+ <div class="center"><button class="btn" id="start">Oʻyinni boshlash</button></div>
+</section>
+
+<section id="game" class="hide">
+ <div class="score" id="score"></div>
+ <div class="stage" id="panel"></div>
+ <div class="center"><button class="ghost" id="reset">Boshidan boshlash</button></div>
+</section>
+</main>
+
+<script>
+const VIK=[
+["Iqtisodiy islohotlar","Bozor iqtisodiyotiga oʻtishning besh tamoyilini ishlab chiqqan Oʻzbekistonning birinchi Prezidenti kim?","Islom Karimov"],
+["Iqtisodiy islohotlar","Narxlarni erkinlashtirish Oʻzbekistonda qaysi yilda boshlangan?","1992-yil"],
+["Iqtisodiy islohotlar","Milliy valyuta — soʻm qaysi yil 1-iyulda muomalaga kiritilgan?","1994-yil"],
+["Iqtisodiy islohotlar","Bozor iqtisodiyotiga oʻtish tamoyillaridan biri: “Davlat — bosh ...” (davom ettiring).","Islohotchi"],
+["Iqtisodiy islohotlar","Soʻmni erkin konvertatsiya qilish (valyuta siyosatini liberallashtirish) qaysi yilda joriy etilgan?","2017-yil"],
+["Xususiy mulkchilik","“Mulkni davlat tasarrufidan chiqarish va xususiylashtirish toʻgʻrisida”gi qonun qaysi yilda qabul qilingan?","1991-yil"],
+["Xususiy mulkchilik","Davlat mulkini xususiy shaxslarga sotish yoki berish jarayoni nima deb ataladi?","Xususiylashtirish"],
+["Xususiy mulkchilik","Xususiylashtirishning dastlabki bosqichida asosan qaysi obyektlar xususiylashtirildi?","Turarjoylar, savdo va maishiy xizmat obyektlari"],
+["Xususiy mulkchilik","Qishloq xoʻjaligida kolxoz va sovxozlar oʻrniga keyinchalik qaysi xoʻjaliklar shakllandi?","Shirkat va fermer xoʻjaliklari"],
+["Xususiy mulkchilik","Bozor iqtisodiyotining asosini qaysi mulk shakli tashkil etadi?","Xususiy mulk"],
+["Bozor munosabatlari","Bozor iqtisodiyotida narx asosan nimaga qarab shakllanadi?","Talab va taklifga"],
+["Bozor munosabatlari","Asaka avtomobil zavodi qaysi viloyatda joylashgan?","Andijon viloyatida"],
+["Bozor munosabatlari","Birinchi erkin industrial-iqtisodiy zona (Navoiy) qaysi yilda tashkil etilgan?","2008-yil"],
+["Bozor munosabatlari","Oʻzbekistonni rivojlantirish boʻyicha “Harakatlar strategiyasi” qaysi yilda qabul qilingan?","2017-yil"],
+["Bozor munosabatlari","Mustaqillik yillarida Oʻzbekiston qaysi ikki strategik sohada mustaqillikka erishdi?","Yoqilgʻi-energetika va gʻalla"]
+];
+const TOGRI=[
+["Toʻgʻri yoki notoʻgʻri","Soʻm 1994-yilda muomalaga kiritilgan.","Toʻgʻri"],
+["Toʻgʻri yoki notoʻgʻri","Bozor iqtisodiyotida narxni faqat davlat belgilaydi.","Notoʻgʻri. Narx asosan talab va taklifga qarab shakllanadi."],
+["Toʻgʻri yoki notoʻgʻri","Xususiy mulk bozor iqtisodiyotining asosi hisoblanadi.","Toʻgʻri"],
+["Toʻgʻri yoki notoʻgʻri","Asaka avtomobil zavodi Samarqand viloyatida joylashgan.","Notoʻgʻri. U Andijon viloyatida."],
+["Toʻgʻri yoki notoʻgʻri","Oʻzbekistonda narxlarni erkinlashtirish 1992-yilda boshlangan.","Toʻgʻri"],
+["Toʻgʻri yoki notoʻgʻri","Xususiylashtirish davlat mulkining ulushini oshirishni anglatadi.","Notoʻgʻri. U mulkni xususiy egalarga oʻtkazishni anglatadi."],
+["Toʻgʻri yoki notoʻgʻri","Soʻmni erkin konvertatsiya qilish 2017-yilda joriy etilgan.","Toʻgʻri"],
+["Toʻgʻri yoki notoʻgʻri","Navoiy erkin industrial-iqtisodiy zonasi 2008-yilda tashkil etilgan.","Toʻgʻri"]
+];
+const KIM=[
+["Iqtisodiy tushunchalar",["Bu Oʻzbekistonning milliy pul birligi.","1994-yilda toʻliq muomalaga kiritilgan.","Undan oldin soʻm-kupon ishlatilgan."],"Soʻm"],
+["Iqtisodiy tushunchalar",["Bu jarayon davlat mulkiga tegishli.","Davlat korxonalari va uylari boshqa egalarga oʻtadi.","Natijada xususiy mulk shakllanadi."],"Xususiylashtirish"],
+["Iqtisodiy tushunchalar",["Bu iqtisodiy hodisa.","Narxlarning umumiy darajasi oshadi.","Pulning xarid qobiliyati pasayadi."],"Inflyatsiya"],
+["Iqtisodiy tushunchalar",["Bu moliyaviy tashkilot.","Omonat qabul qiladi.","Kredit beradi."],"Bank"],
+["Iqtisodiy tushunchalar",["Qishloq xoʻjaligi bilan bogʻliq.","Yer uzoq muddatga ijaraga beriladi.","Kolxoz va shirkatlardan keyin shakllangan."],"Fermer xoʻjaligi"],
+["Iqtisodiy tushunchalar",["Davlat byudjetining asosiy manbai.","Fuqarolar va korxonalar toʻlaydi.","Daromaddan olinadigan turi ham bor."],"Soliq"]
+];
+const BANKS={vik:VIK,togri:TOGRI,kim:KIM};
+const $=id=>document.getElementById(id);
+const DEF=[["Tarixchilar","Javohir\nAtahon\nRasul\nMuhabat\nShohjohon\nDamir\nFaruh\nZohid\nBunyod\nErkabulon\nBehruz"],["2-guruh","Javohir\nShoxruh\nJahongir\nSarvar\nXusniyabonuv\nShagzod\nAtham\nSobirjon\nAsad\nBehruz"],["3-guruh","Asilbek\nSuxrob\nSuxrob\nDilnoza\nFarux\nSherzod\nDayanch\nDilmurot\nAtham"]];
+let S;
+$("inputs").innerHTML=DEF.map((d,i)=>`<div class="arch t${i}"><label for="n${i}">Guruh nomi</label><input id="n${i}" value="${d[0]}"><label for="m${i}" style="margin-top:12px">Ishtirokchilar (har qatorda bittadan)</label><textarea id="m${i}">${d[1]}</textarea></div>`).join("");
+const rnd=a=>a[Math.floor(Math.random()*a.length)];
+let timer;
+
+$("start").onclick=()=>{
+ const teams=[0,1,2].map(i=>({name:$("n"+i).value.trim()||`${i+1}-guruh`,members:$("m"+i).value.split("\n").map(s=>s.trim()).filter(Boolean),pool:[],pts:0}));
+ if(teams.some(t=>!t.members.length)){alert("Har bir guruhga kamida bitta ishtirokchi yozing.");return}
+ S={teams,qs:[...BANKS[mode]].sort(()=>Math.random()-.5),qi:0,start:0,cur:0,tried:0,member:"",phase:"idle",q:null,ready:true,mode};
+ $("setup").classList.add("hide");$("game").classList.remove("hide");
+ render();
+};
+$("reset").onclick=()=>{if(confirm("Oʻyin boshidan boshlansinmi?")){clearInterval(timer);$("game").classList.add("hide");$("setup").classList.remove("hide")}};
+
+function pick(t){
+ if(!t.pool.length)t.pool=[...t.members];
+ return t.pool.splice(Math.floor(Math.random()*t.pool.length),1)[0];
+}
+function nextQ(){
+ if(S.qi>=S.qs.length){S.phase="end";render();return}
+ S.q=S.qs[S.qi++];S.cur=S.start;S.tried=0;S.phase="q";S.ready=false;
+ S.member=pick(S.teams[S.cur]);render();
+}
+function ok(){S.teams[S.cur].pts+=pts();S.start=(S.start+1)%3;S.phase="idle";render()}
+function pass(){
+ S.tried++;
+ if(S.tried>=3){S.phase="ans";render();return}
+ S.cur=(S.cur+1)%3;S.member=pick(S.teams[S.cur]);S.ready=false;render();
+}
+function done(){S.start=(S.start+1)%3;S.phase="idle";render()}
+function spin(t,final,fin){
+ clearInterval(timer);
+ timer=setInterval(()=>{const el=$("mem");if(!el){clearInterval(timer);return}el.textContent=rnd(t.members)},70);
+ setTimeout(()=>{clearInterval(timer);const el=$("mem");if(el){el.textContent=final;fin()}},1300);
+}
+
+let mode="vik";
+const MODES=[["vik","Viktorina"],["togri","Toʻgʻri yoki notoʻgʻri"],["kim","Bu nima? (maslahatlar)"]];
+const INFO={vik:"Savolga ochiq javob beriladi. Toʻgʻri javob: 10 ball.",togri:"Gap oʻqiladi, ishtirokchi toʻgʻri yoki notoʻgʻriligini aytadi. Toʻgʻri javob: 10 ball.",kim:"Tushuncha 3 ta maslahat bilan topiladi. Birinchi maslahatda topilsa 30, ikkinchisida 20, uchinchisida 10 ball."};
+function drawModes(){
+ $("modes").innerHTML=MODES.map(m=>`<button class="${m[0]===mode?"btn":"ghost"}" data-m="${m[0]}">${m[1]}</button>`).join("");
+ $("modeInfo").textContent=INFO[mode];
+ document.querySelectorAll("#modes button").forEach(b=>b.onclick=()=>{mode=b.dataset.m;drawModes()});
+}
+drawModes();
+function pts(){return S.mode==="kim"?30-10*S.tried:10}
+function qHTML(all){
+ const q=S.q;
+ if(S.mode==="kim"){const n=all?3:S.tried+1;return `<p class="tag">Bu nima? Maslahat: ${n} / 3</p>`+q[1].slice(0,n).map(c=>`<p class="q clue">${c}</p>`).join("")}
+ return `<p class="q">${S.mode==="togri"?"Toʻgʻri yoki notoʻgʻri? ":""}${q[1]}</p>`;
+}
+function render(){
+ const showOn=S.phase==="q"?S.cur:S.phase==="idle"?S.start:-1;
+ $("score").innerHTML=S.teams.map((t,i)=>`<div class="tile t${i} ${i===showOn?"on":""}"><div class="nm">${t.name}</div><div class="pt">${t.pts}</div></div>`).join("");
+ const p=$("panel");
+ if(S.phase==="idle"){
+  const t=S.teams[S.start];
+  p.innerHTML=`<div class="t${S.start}"><p class="turn">Navbat</p><p class="mem">${t.name}</p></div><p class="tag">Savol ${S.qi} / ${S.qs.length} berildi</p><div class="row"><button class="btn" id="go">Savol berish</button></div>`;
+  $("go").onclick=nextQ;
+ }else if(S.phase==="q"){
+  const t=S.teams[S.cur];
+  p.innerHTML=`<p class="tag">Mavzu: ${S.q[0]}${S.tried?`. Savol oʻtdi (${S.tried}-marta)`:""}</p>
+  <div class="t${S.cur}"><p class="turn">Javob beradi: <span class="grp">${t.name}</span></p><p class="mem" id="mem">${S.member}</p></div>
+  <div id="rev" class="${S.ready?"":"hide"}">
+   ${qHTML(false)}
+   <div id="a" class="ans hide">Toʻgʻri javob: <b>${S.q[2]}</b></div>
+   <div class="row"><button class="ghost" id="show">Javobni koʻrish</button><button class="btn" id="ok">Javob toʻgʻri, +${pts()} ball</button><button class="ghost" id="no">Bilmadi, keyingi guruhga</button></div>
+  </div>`;
+  $("show").onclick=()=>$("a").classList.toggle("hide");
+  $("ok").onclick=ok;$("no").onclick=pass;
+  if(!S.ready)spin(t,S.member,()=>{S.ready=true;$("rev").classList.remove("hide")});
+ }else if(S.phase==="ans"){
+  p.innerHTML=`<p class="tag">Mavzu: ${S.q[0]}</p>${qHTML(true)}<div class="ans">Hech bir guruh bilmadi. Toʻgʻri javob: <b>${S.q[2]}</b></div><div class="row"><button class="btn" id="nx">Davom etish</button></div>`;
+  $("nx").onclick=done;
+ }else{
+  const m=Math.max(...S.teams.map(t=>t.pts));
+  const w=S.teams.filter(t=>t.pts===m).map(t=>t.name).join(" va ");
+  p.innerHTML=`<p class="tag">Oʻyin tugadi</p><p class="big">Gʻolib: ${w}</p><p class="tag">${m} ball</p>`;
+ }
+}
+</script>
+</body>
+</html>
